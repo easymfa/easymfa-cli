@@ -1,6 +1,6 @@
 {
   "name": "easymfa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "start": "node index.js"
+    "start": "node index.js",
+    "prepare": "npm run build"
   },
   "author": "Gene Pian",
   "license": "ISC",
