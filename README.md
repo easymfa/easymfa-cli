@@ -32,4 +32,23 @@ easymfa --profile [string] --serial-number [string] --token [number]
 # Help
 ```sh
 easymfa --help
+
+Usage: easymfa --profile [string] --serial-number [string] --token [number]
+
+EasyMFA is a command line application that gets AWS credentials given a MFA
+token and serial number and saves it to a specified profile in the AWS
+credential file.
+
+Options:
+  --help               Show help                                       [boolean]
+  --version            Show version number                             [boolean]
+  --token, -t          The value provided by the MFA device. [number] [required]
+  --serial-number, -s  The identification number of the MFA device that is
+                       associated with the IAM user. The value is either the
+                       serial number for a hardware device (such as
+                       GAHT12345678) or an Amazon Resource Name (ARN) for a
+                       virtual device (such as
+                       arn:aws:iam::123456789012:mfa/user).  [string] [required]
+  --profile, -p        The profile name to update in the AWS credentials file.
+                                                             [string] [required]
 ```
