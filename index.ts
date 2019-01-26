@@ -7,14 +7,14 @@ const credentials = require('./credentials');
 (async () => {
     const argv = yargs
         .usage(
-            'Updates the specified profile in the AWS credential file with the latest credentials, given a current MFA token code.'
+            'Usage: $0 --profile [string] --serial-number [string] --token [number]\n\nEasyMFA is a command line application that gets AWS credentials given a MFA token and serial number and saves it to a specified profile in the AWS credential file.'
         )
         .options({
             'token': {
                 alias: 't',
                 demandOption: true,
                 description: 'The value provided by the MFA device.',
-                string: true
+                number: true
             },
             'serial-number': {
                 alias: 's',

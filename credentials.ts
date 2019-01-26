@@ -4,13 +4,13 @@ import path = require('path');
 
 const ini = require('prop-ini');
 
-export function setCredentials(profile: string, serialNumber: string, token: string) : Promise<void> {
+export function setCredentials(profile: string, serialNumber: string, token: number) : Promise<void> {
     return new Promise((resolve, reject) => {
         const sts = new AWS.STS();
 
         sts.getSessionToken({
             SerialNumber: serialNumber,
-            TokenCode: token
+            TokenCode: `${token}`
         }, (err, data) => {
             if (err) {
                 reject(err);
