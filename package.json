@@ -1,5 +1,5 @@
 {
-  "name": "easymfa",
+  "name": "easymfa-cli",
   "version": "1.0.3",
   "description": "EasyMFA is a command line application that gets AWS credentials given a MFA token and serial number and saves it to a specified profile in the AWS credential file.",
   "main": "index.js",
@@ -16,7 +16,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gpian/easymfa.git"
+    "url": "https://github.com/gpian/easymfa-cli.git"
   },
   "keywords": [
     "aws",
