@@ -1,6 +1,6 @@
 {
   "name": "easymfa",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "EasyMFA is a command line application that gets AWS credentials given a MFA token and serial number and saves it to a specified profile in the AWS credential file.",
   "main": "index.js",
   "bin": {
@@ -15,13 +15,22 @@
   "author": "Gene Pian",
   "license": "ISC",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/gpian/easymfa.git"
+    "type": "git",
+    "url": "https://github.com/gpian/easymfa.git"
   },
   "keywords": [
-    "aws", "mfa", "sts", "aws-sts", "get-session-token",
-    "session", "token", "cli", "profile", "2-factor",
-    "multi-factor", "credentials"
+    "aws",
+    "mfa",
+    "sts",
+    "aws-sts",
+    "get-session-token",
+    "session",
+    "token",
+    "cli",
+    "profile",
+    "2-factor",
+    "multi-factor",
+    "credentials"
   ],
   "dependencies": {
     "aws-sdk": "^2.394.0",
