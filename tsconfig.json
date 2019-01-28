@@ -17,5 +17,8 @@
     "inlineSources": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization":false
-  }
+  },
+  "exclude": [
+    "test"
+  ]
 }
