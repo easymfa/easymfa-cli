@@ -32,7 +32,6 @@ export function setCredentials(profile: string, serialNumber: string, token: num
             TokenCode: `${token}`
         }, (err, data) => {
             if (err) {
-                console.error(err);
                 reject(err);
                 return;
             } else {
