@@ -21,7 +21,7 @@ EasyMFA is a command line application that gets AWS credentials given a MFA toke
 
 # Install
 ```sh
-npm install -g easymfa-cli
+npm install -g @easymfa/easymfa-cli
 ```
 
 # Usage
