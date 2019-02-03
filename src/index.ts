@@ -10,11 +10,11 @@ import credentials = require('./credentials');
             'Usage: $0 --profile string --serial-number string --token number [--duration number]\n\nEasyMFA is a command line application that gets AWS credentials given a MFA token and serial number and saves it to a specified profile in the AWS credential file.'
         )
         .options({
-            'token': {
-                alias: 't',
+            'profile': {
+                alias: 'p',
                 demandOption: true,
-                description: 'The value provided by the MFA device.',
-                number: true
+                description: 'The profile name to update in the AWS credentials file.',
+                string: true
             },
             'serial-number': {
                 alias: 's',
@@ -22,11 +22,11 @@ import credentials = require('./credentials');
                 description: 'The identification number of the MFA device that is associated with the IAM user. The value is either the serial number for a hardware device (such as GAHT12345678) or an Amazon Resource Name (ARN) for a virtual device (such as arn:aws:iam::123456789012:mfa/user).',
                 string: true
             },
-            'profile': {
-                alias: 'p',
+            'token': {
+                alias: 't',
                 demandOption: true,
-                description: 'The profile name to update in the AWS credentials file.',
-                string: true
+                description: 'The value provided by the MFA device.',
+                number: true
             },
             'duration': {
                 alias: 'd',
