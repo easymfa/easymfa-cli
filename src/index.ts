@@ -51,7 +51,7 @@ import credentials = require('./credentials');
         errorMessage += 'Invalid profile, please provide a valid profile.\n';
     }
 
-    if (isNaN(argv.duration) || argv.duration < 900 || argv.duration > 129600) {
+    if ((argv.duration !== undefined && isNaN(argv.duration)) || argv.duration < 900 || argv.duration > 129600) {
         errorMessage += 'Invalid duration, please provide a valid number between 900 and 129600.\n';
     }
 
