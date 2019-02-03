@@ -1,6 +1,6 @@
 {
   "name": "@easymfa/easymfa-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "EasyMFA is a command line application that gets AWS credentials given a MFA token and serial number and saves it to a specified profile in the AWS credential file.",
   "main": "src/index.js",
   "bin": {
