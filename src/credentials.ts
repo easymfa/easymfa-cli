@@ -5,7 +5,7 @@ import fs = require('fs');
 
 const ini = require('prop-ini');
 
-export function setCredentials(profile: string, serialNumber: string, token: number) : Promise<void> {
+export function setCredentials(profile: string, serialNumber: string, token: number, duration?: number) : Promise<AWS.STS.Credentials> {
     const credPath = path.join(os.homedir(), '.aws');
     const credFile = path.join(credPath, 'credentials');
 
@@ -29,11 +29,11 @@ export function setCredentials(profile: string, serialNumber: string, token: num
 
         sts.getSessionToken({
             SerialNumber: serialNumber,
-            TokenCode: `${token}`
+            TokenCode: `${token}`,
+            DurationSeconds: duration
         }, (err, data) => {
             if (err) {
                 reject(err);
-                return;
             } else {
                 const newCreds = data.Credentials;
                 if (newCreds) {
@@ -42,10 +42,13 @@ export function setCredentials(profile: string, serialNumber: string, token: num
                         propIni.addData(newCreds.SecretAccessKey, profile, 'aws_secret_access_key');
                         propIni.addData(newCreds.SessionToken, profile, 'aws_session_token');
                         propIni.encode({ file: credFile });
+                        resolve(newCreds);
+                    } else {
+                        reject({ message: `Could not retrieve profile [${profile}] from the AWS credential file.` });
                     }
+                } else {
+                    reject({ message: `Get-Session-Token call came back with no credentials.` });    
                 }
-
-                resolve();
             }
         });
     });

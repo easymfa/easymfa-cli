@@ -26,14 +26,14 @@ npm install -g @easymfa/easymfa-cli
 
 # Usage
 ```sh
-easymfa --profile [string] --serial-number [string] --token [number]
+easymfa --profile string --serial-number string --token number [--duration number]
 ```
 
 # Help
 ```sh
 easymfa --help
 
-Usage: easymfa --profile [string] --serial-number [string] --token [number]
+Usage: easymfa --profile string --serial-number string --token number [--duration number]
 
 EasyMFA is a command line application that gets AWS credentials given a MFA
 token and serial number and saves it to a specified profile in the AWS
@@ -51,6 +51,14 @@ Options:
                        arn:aws:iam::123456789012:mfa/user).  [string] [required]
   --profile, -p        The profile name to update in the AWS credentials file.
                                                              [string] [required]
+  --duration, -d       The duration, in seconds, that the credentials should
+                       remain valid. Acceptable durations for IAM user sessions
+                       range from 900 seconds (15 minutes) to 129600 seconds (36
+                       hours), with 43200 seconds (12 hours) as the default.
+                       Sessions for AWS account owners are restricted to a
+                       maximum of 3600 seconds (one hour). If the duration is
+                       longer than one hour, the session for AWS account owners
+                       defaults to one hour.                            [number]
 ```
 # Issues
 Pleases log any 🐛s on [Github](https://github.com/easymfa/easymfa-cli/issues). Thanks!
