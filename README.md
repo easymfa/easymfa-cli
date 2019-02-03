@@ -52,3 +52,5 @@ Options:
   --profile, -p        The profile name to update in the AWS credentials file.
                                                              [string] [required]
 ```
+# Issues
+Pleases log any 🐛s on [Github](https://github.com/easymfa/easymfa-cli/issues). Thanks!
