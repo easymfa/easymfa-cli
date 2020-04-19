@@ -2,12 +2,12 @@
 
 const colors = require('colors');
 const yargs = require('yargs');
-import credentials = require('./credentials');
+const credentials = require('./credentials');
 
 (async () => {
     const argv = yargs
         .usage(
-            'Usage: $0 --profile string --serial-number string --token number [--duration number]\n\nEasyMFA is a command line application that gets AWS credentials given a MFA token and serial number and saves it to a specified profile in the AWS credential file.'
+            'Usage: $0 --profile string --serial-number string --token string [--duration number]\n\nEasyMFA is a command line application that gets AWS credentials given a MFA token and serial number and saves it to a specified profile in the AWS credential file.'
         )
         .options({
             'profile': {
@@ -26,7 +26,7 @@ import credentials = require('./credentials');
                 alias: 't',
                 demandOption: true,
                 description: 'The value provided by the MFA device.',
-                number: true
+                string: true
             },
             'duration': {
                 alias: 'd',

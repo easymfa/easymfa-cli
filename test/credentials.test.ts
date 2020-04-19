@@ -1,4 +1,4 @@
-import credentials = require('../src/credentials');
+const credentials = require('../src/credentials');
 const fs = require('fs');
 const propIni = require('prop-ini');
 
